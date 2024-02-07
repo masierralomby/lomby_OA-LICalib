@@ -145,6 +145,7 @@ class LioDataset {
     }
     else if (lidar_model_ == HESAI_XT32) {
         hesai_convert_ = std::make_shared<HesaiLiDAR>(HesaiRingNo::XT32);
+        std::cout << "LiDAR model set as HESAI_XT32." << std::endl;
 
     }
     else if (lidar_model_ == RS_16) {

@@ -75,4 +75,9 @@ RUN bash -c "rm -rf /root/catkin_oa_calib/src/OA-LICalib"
 RUN bash -c "echo 'source /opt/ros/melodic/setup.bash' >> ~/.bashrc"
 RUN bash -c "echo 'alias sors=\"source devel/setup.bash\"' >> ~/.bashrc"
 
+# Install PYTHON script dependencies
+RUN pip install matplotlib
+RUN pip install pandas
+RUN apt install -y python-tk
+
 WORKDIR /root

@@ -1,12 +1,16 @@
 # bag
-topic_lidar: /scan_sim # /velodyne_packets #
-topic_imu: /imu_sim
+# topic_lidar: /scan_sim # /velodyne_packets #
+# topic_imu: /imu_sim
+topic_lidar: /hesai/pandar # /velodyne_packets #
+topic_imu: /rectified_imu
 
-LidarModel: VLP_16_SIMU
+# LidarModel: VLP_16_SIMU
+LidarModel: HESAI_XT32
 vlp16_ring_case: 0
 
 scan4map: 15.0
-ndtResolution: 0.5 # 0.5 for indoor case and 1.0 for outdoor case
+# ndtResolution: 0.5 # 0.5 for indoor case and 1.0 for outdoor case
+ndtResolution: 1.0 # 0.5 for indoor case and 1.0 for outdoor case
 ndt_key_frame_downsample: 0.1
 map_downsample_size: 0.25
 
@@ -17,12 +21,14 @@ use_gui: false
 # 当 segment_num = 1时，即用一段数据标定
 segment_num: 1
 selected_segment:
-  - {start_time: 0, end_time: 7, path_bag: /home/ha/catkin_oa_calib/src/OA-LICalib/data/bag/simu_bag.bag}
+  # - {start_time: 0, end_time: 7, path_bag: /root/catkin_oa_calib/src/OA-LICalib/data/bag/simu_bag.bag}
 
+  - {start_time: 10, end_time: 20, path_bag: /root/catkin_oa_calib/src/OA-LICalib/data/rosbag2_2024_02_05-16_31_44/rosbag2_2024_02_05-16_31_44.bag}
 
 # If you select false, it calculate initial rotations.
 # If you know the approximate conversion between the sensors, set true.
-plane_motion: false
+# plane_motion: false
+plane_motion: true
 
 # optimization weight
 gyro_weight: 2.80

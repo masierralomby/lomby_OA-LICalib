@@ -1,6 +1,7 @@
 CMakeLists.txt.user
 build
 thirdparty/build-*
+data/
 
 # Compiled python.
 *.pyc
